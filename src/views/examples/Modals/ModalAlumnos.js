@@ -23,7 +23,8 @@ function alumnosSeleccionados(alumno) {
         alumno.splice(i, 1);
     } else { alumno.push(alumno); }
     console.log(alumno)
-  }
+ 
+}
 
 
 
