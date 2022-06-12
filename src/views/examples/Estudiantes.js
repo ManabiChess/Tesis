@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "components/Headers/Header.js";
+import {URL_GET_TODOS_ESTUDIANTES} from "assets/constantes";
 import {
   Button,
   Card,
@@ -62,7 +63,7 @@ const ListarEstudiantes = () => {
   const [editando, setEditando] = useState(false);
   const [loading, setLoading] = useState(false);
   const loadTasks = async () => {
-    const response = await fetch("http://localhost:3001/estudiantes");
+    const response = await fetch(URL_GET_TODOS_ESTUDIANTES);
     const data = await response.json();
     setTasks(data);
   };
