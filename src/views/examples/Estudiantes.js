@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "components/Headers/Header.js";
-import {URL_GET_TODOS_ESTUDIANTES} from "assets/constantes";
+import {URL_GET_TODOS_ESTUDIANTES, URL_ACTUALIZAR_ESTUDIANTE, URL_ELIMINAR_ESTUDIANTE} from "assets/constantes";
 import {
   Button,
   Card,
@@ -85,7 +85,7 @@ const ListarEstudiantes = () => {
   const ActualizarEstudiante = async (e) => {
     e.preventDefault();
     console.log(estudiante);
-    const res = await fetch('http://localhost:3001/estudiantes/actualizar', {
+    const res = await fetch(URL_ACTUALIZAR_ESTUDIANTE, {
       method: 'POST',
       body: JSON.stringify(estudiante),
       headers: { 'Content-Type': 'application/json' }
@@ -95,7 +95,7 @@ const ListarEstudiantes = () => {
   };
   const EliminarEstudiante = async (id) => {
     console.log(id);
-    await fetch('http://localhost:3001/estudiantes/eliminar', {
+    await fetch(URL_ELIMINAR_ESTUDIANTE, {
       method: 'POST',
       body: JSON.stringify({id: id}),
       headers: { 'Content-Type': 'application/json' }
